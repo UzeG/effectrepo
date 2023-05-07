@@ -13,7 +13,8 @@ window.addEventListener("load", () => {
         // normalize wheel event
         const delta = window.navigator.userAgent.indexOf("Firefox") !== -1 ? e.deltaY : e.deltaY / 40;
 
-        rotationEffect += delta;
+        // 改变滚轮的灵敏度
+        rotationEffect += delta / 20;
     }, {
         passive: true
     });
