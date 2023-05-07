@@ -1,0 +1,53 @@
+body {
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+    padding: 3em;
+
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+.overlay {
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    clip-path: circle(100px at var(--x) var(--y));
+    transition: clip-path .2s;
+
+    &.is-open {
+        clip-path: circle(200% at var(--x) var(--y));
+        transition: clip-path 1.3s;
+        transition-timing-function: cubic-bezier(1, -.01, .01, .99)
+    }
+}
+
+span {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #666;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    margin: 1em;
+}
